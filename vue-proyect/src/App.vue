@@ -3,9 +3,9 @@ import TheTitle from './components/TheTitle.vue';
 </script>
 
 <template>
-  <TheTitle/>
+  <TheTitle title="Título estático"></TheTitle>
 </template>
 
-<style scoped>
+<style>
 
 </style>
