@@ -1,11 +1,9 @@
 <script setup lang="ts">
-    defineProps<{
-        title: string;
-    }>()
+  
     
 </script>
 <template>
-    <h1 class="title">{{ title }}</h1>
+    <h1 class="title"><slot/></h1>
 
 </template>
 
