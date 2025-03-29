@@ -18,8 +18,8 @@ const subtraction = () => {
 <template>
     <TheTitle>Titulo del contenedor</TheTitle>
     <p class="counter">{{ counter }}</p>
-    <button type="button" @click="addition">Increment</button>
-    <button type="button" @click="subtraction">Decrement</button>
+    <button type="button" @click="addition" v-if="counter < 10">Increment</button>
+    <button type="button" @click="subtraction" v-if="counter > 0">Decrement</button>
     
 </template>
 
