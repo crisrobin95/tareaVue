@@ -1,11 +1,24 @@
 <script setup lang="ts">
-import TheTitle from './components/TheTitle.vue';
+  import TheCounter from './components/TheCounter.vue';
 </script>
 
 <template>
-  <TheTitle>Título estático</TheTitle>
+  <main class="main">
+    
+    <TheCounter>
+      
+    </TheCounter>
+</main>
 </template>
 
-<style>
+<style lang="scss" scoped>
+  $gounMain: rgba(115, 115, 234, 0.662);
+  $paddingMain: 2em;
+  
+  .main{
+    background-color: $gounMain;
+    padding: $paddingMain;
+  }
+
 
 </style>
