@@ -1,12 +1,15 @@
-<script setup >
+<script setup  lang="ts">
     import ChildComponent from './ChildComponent.vue';
     import { ref } from 'vue';
+    import { provide } from 'vue';
 
     const messageFromChild = ref('');
     
     function eventClickCustom(payload) {
         messageFromChild.value = payload;
-  }
+    }
+    provide('comunication', "Este mensaje esta provisto por el padre al hijo mediante provide e inject");
+
 
 </script>
 
