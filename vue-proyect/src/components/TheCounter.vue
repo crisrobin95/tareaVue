@@ -1,13 +1,13 @@
 <script setup  lang="ts">
 import TheTitle from './TheTitle.vue';
-import { useCounter } from '@/composable/counter.vue';
+import { useCounterStore} from '../stores/counter';
 import {  ref,watch } from 'vue';
 
-const {counter,double, addition, subtraction} = useCounter();
+const counterStore = useCounterStore();
 
 const counterTitle = ref('');
 
-watch(counter, (newValue) => {
+watch(() => counterStore.counter, (newValue) => {
   if (newValue === 0) {
     counterTitle.value = 'Estás en el valor mínimo';
   } else if (newValue === 10) {
@@ -15,7 +15,7 @@ watch(counter, (newValue) => {
   } else {
     counterTitle.value = 'Estás en los parámetros adecuados';
   }
-}); 
+});
 
 
 
@@ -23,12 +23,12 @@ watch(counter, (newValue) => {
 
 <template>
     <TheTitle>Contador: {{ counterTitle }}</TheTitle>
-    <h4 class="counter" :class="{ 'counter--ten': counter === 10 }">{{ counter }}</h4>
-    <h4>{{ double }}</h4  >
+    <h4 class="counter" :class="{ 'counter--ten': counterStore.counter === 10 }">{{ counterStore.counter }}</h4>
+    <h4>{{ counterStore.double }}</h4  >
 
     <section class="buttons">
-      <button type="button" @click="addition" v-if="counter < 10" class="buttons__increment">Increment</button>
-      <button type="button" @click="subtraction" v-if="counter> 0" class="buttons__decrement">Decrement</button>
+      <button type="button" @click="counterStore.addition" v-if="counterStore.counter < 10" class="buttons__increment">Increment</button>
+      <button type="button" @click="counterStore.subtraction" v-if="counterStore.counter > 0" class="buttons__decrement">Decrement</button>
     </section>
     
 </template>
