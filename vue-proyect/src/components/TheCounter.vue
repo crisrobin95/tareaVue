@@ -2,13 +2,15 @@
 import TheTitle from './TheTitle.vue';
 import { useCounter } from '@/composable/counter.vue';
 
-const {counter, addition, subtraction} = useCounter();
+const {counter,double, addition, subtraction} = useCounter();
 
 </script>
 
 <template>
     <TheTitle>Contador: </TheTitle>
-    <p class="counter" :class="{ 'counter--ten': counter === 10 }">{{ counter }}</p>
+    <h4 class="counter" :class="{ 'counter--ten': counter === 10 }">{{ counter }}</h4>
+    <h4>{{ double }}</h4  >
+
     <section class="buttons">
       <button type="button" @click="addition" v-if="counter < 10" class="buttons__increment">Increment</button>
       <button type="button" @click="subtraction" v-if="counter> 0" class="buttons__decrement">Decrement</button>
