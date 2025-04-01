@@ -1,0 +1,20 @@
+¿Qué es un linter?
+    Es una herrramienta para comprobar que la estructura del código sea común
+¿Qué es Husky?
+    Automatizar procesos
+¿Qué es la reactividad?
+    La capacidade de cambiar el valor de las variables
+¿Desde dónde hay que crear todas las ramas para los desarrollos?
+    apartir del main
+¿Cuándo se puede utilizar la rama main?
+    nunca, siempre se usa ramas
+¿Qué son las custom properties?
+    varibles de css 
+Diferencias entre v-if y v-show
+    if elimina la etiqueta del DOM, mientras de show la oculta 
+¿Cuáles son los valores de falsy?
+    valores 0, -0, NaN, null, undefined, '', "", ``, 
+¿Qué es Nullish Coalescing Operator?
+    permite asignar un valor por defecto a una variable si es null o undefined.
+¿Para que se utiliza TypeScript?
+    Para tipar el código
