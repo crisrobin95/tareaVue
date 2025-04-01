@@ -1,24 +1,22 @@
 <script setup lang="ts">
-  import TheCounter from './components/TheCounter.vue';
+import { RouterLink, RouterView } from 'vue-router';
+
 </script>
 
 <template>
-  <main class="main">
-    
-    <TheCounter>
-      
-    </TheCounter>
-</main>
+  <nav class="link">
+    <RouterLink to="/" class="link--component">Inicio</RouterLink>
+    <RouterLink to="/Catalog" class="link--component">Catalogo</RouterLink> 
+  </nav>
+  <RouterView />
+  
 </template>
 
 <style lang="scss" scoped>
-  $gounMain: rgba(115, 115, 234, 0.662);
-  $paddingMain: 2em;
-  
-  .main{
-    background-color: $gounMain;
-    padding: $paddingMain;
+  .link{
+    display: inline-block;
   }
 
-
+  
+   
 </style>

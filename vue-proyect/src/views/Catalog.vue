@@ -1,13 +1,12 @@
 <script setup lang="ts">
-  
-    
+import ProductCard from '@/components/ProductCard.vue';
+
 </script>
+
 <template>
-    <h1 class="title"><slot></slot></h1>
+    <ProductCard></ProductCard>
 </template>
 
-
 <style lang="scss" scoped>
-  
-    
+
 </style>
