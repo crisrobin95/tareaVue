@@ -1,13 +1,28 @@
 <script setup  lang="ts">
 import TheTitle from './TheTitle.vue';
 import { useCounter } from '@/composable/counter.vue';
+import {  ref,watch } from 'vue';
 
 const {counter,double, addition, subtraction} = useCounter();
+
+const counterTitle = ref('');
+
+watch(counter, (newValue) => {
+  if (newValue === 0) {
+    counterTitle.value = 'Estás en el valor mínimo';
+  } else if (newValue === 10) {
+    counterTitle.value = 'Estás en el valor máximo';
+  } else {
+    counterTitle.value = 'Estás en los parámetros adecuados';
+  }
+}); 
+
+
 
 </script>
 
 <template>
-    <TheTitle>Contador: </TheTitle>
+    <TheTitle>Contador: {{ counterTitle }}</TheTitle>
     <h4 class="counter" :class="{ 'counter--ten': counter === 10 }">{{ counter }}</h4>
     <h4>{{ double }}</h4  >
 
