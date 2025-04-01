@@ -8,7 +8,7 @@ const {counter, addition, subtraction} = useCounter();
 
 <template>
     <TheTitle>Contador: </TheTitle>
-    <p class="counter">{{ counter }}</p>
+    <p class="counter" :class="{ 'counter--ten': counter === 10 }">{{ counter }}</p>
     <section class="buttons">
       <button type="button" @click="addition" v-if="counter < 10" class="buttons__increment">Increment</button>
       <button type="button" @click="subtraction" v-if="counter> 0" class="buttons__decrement">Decrement</button>
@@ -17,8 +17,11 @@ const {counter, addition, subtraction} = useCounter();
 </template>
 
 <style lang="scss" scoped>
-     $blue: blue;
+
+    $blue: blue;
     $red: red;
+    $green: green;
+
     .counter{
       font-size: 3em;
     }
@@ -30,10 +33,14 @@ const {counter, addition, subtraction} = useCounter();
       padding: 1em;
       
     }
+
     .buttons__increment {
       
       background-color: $blue;
       
+    }
+    .counter--ten{
+      color:$green;
     }
 
     .buttons__decrement{

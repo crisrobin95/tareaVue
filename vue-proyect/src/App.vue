@@ -18,6 +18,4 @@ import ParentComponent from './components/ParentComponent.vue';
     display: inline-block;
   }
 
-  
-   
 </style>
