@@ -1,32 +1,23 @@
-<script setup lang="ts">
+<script setup  lang="ts">
 import TheTitle from './TheTitle.vue';
-import { ref } from 'vue';
+import { useCounter } from '@/composable/counter.vue';
 
-let counter = ref(0);
-
-const addition = () => {
-  counter.value++;
-};
-
-const subtraction = () => {
-  counter.value--;
-};
-
+const {counter, addition, subtraction} = useCounter();
 
 </script>
 
 <template>
-    <TheTitle>Titulo del contenedor</TheTitle>
+    <TheTitle>Contador: </TheTitle>
     <p class="counter">{{ counter }}</p>
     <section class="buttons">
-      <button type="button" @click="addition" v-if="counter < 10" calss="buttons__increment">Increment</button>
+      <button type="button" @click="addition" v-if="counter < 10" class="buttons__increment">Increment</button>
       <button type="button" @click="subtraction" v-if="counter> 0" class="buttons__decrement">Decrement</button>
     </section>
     
 </template>
 
 <style lang="scss" scoped>
-    $blue: blue;
+     $blue: blue;
     $red: red;
     .counter{
       font-size: 3em;
@@ -40,20 +31,13 @@ const subtraction = () => {
       
     }
     .buttons__increment {
-      display: flex;
       
       background-color: $blue;
-      margin-left: 2em;
-      padding-left: 2em;
+      
     }
 
     .buttons__decrement{
       background-color: $red;
-      padding-right: 2em;
-      margin-right: 2em;
     }
 
-
-
-  
 </style>

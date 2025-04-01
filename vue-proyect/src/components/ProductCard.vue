@@ -18,7 +18,7 @@ import product from '@/data/mock';
     $card-width: 15.62em;
     $card-margin: 1.25em;
     $border-radius: 0.5em;
-    $box-shadow: 0 0.25em 8em rgba(86, 84, 84, 0.1);
+    $box-shadow: 0 0.25em 8em rgba(249, 232, 232, 0.7);
     $button-bg: #007bff;
     $button-color: white;
 
